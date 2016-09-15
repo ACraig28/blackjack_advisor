@@ -15,17 +15,14 @@ loop do
   first_card = gets.chomp
   if face_check(first_card)
     first_value = 10
-    puts first_value
     break
   elsif ace_check(first_card)
     first_value = 11
-    puts first_value
     break
-  elsif first_card.to_i > 10
+  elsif first_card.to_i > 10 || first_card.to_i == 0
     puts "That is not an acceptable value. Please enter a number 1-10, 'J','Q','K' or 'A'."
   else
     first_value = first_card
-    puts first_value
     break
   end
 end
@@ -35,20 +32,31 @@ loop do
   second_card = gets.chomp
   if face_check(second_card)
     second_value = 10
-    puts second_value
     break
   elsif ace_check(second_card)
     second_value = 11
-    puts second_value
     break
-  elsif second_card.to_i > 10
+  elsif second_card.to_i > 10 || second_card.to_i == 0
     puts "That is not an acceptable value. Please enter a number 1-10, 'J','Q','K' or 'A'."
   else
     second_value = second_card
-    puts second_value
     break
   end
 end
 
-# puts "Please enter the dealer's card"
-# dealers_card = gets.chomp
+loop do
+  puts "Please enter the dealer's card:"
+  dealer_card = gets.chomp
+  if face_check(dealer_card)
+    dealer_value = 10
+    break
+  elsif ace_check(dealer_card)
+    dealer_value = 11
+    break
+  elsif dealer_card.to_i > 10 || dealer_card.to_i == 0
+    puts "That is not an acceptable value. Please enter a number 1-10, 'J','Q','K' or 'A'."
+  else
+    dealer_value = dealer_card
+    break
+  end
+end
