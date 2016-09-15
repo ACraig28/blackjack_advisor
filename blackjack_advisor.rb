@@ -30,8 +30,25 @@ loop do
   end
 end
 
+loop do
+  puts "Please enter your second card:"
+  second_card = gets.chomp
+  if face_check(second_card)
+    second_value = 10
+    puts second_value
+    break
+  elsif ace_check(second_card)
+    second_value = 11
+    puts second_value
+    break
+  elsif second_card.to_i > 10
+    puts "That is not an acceptable value. Please enter a number 1-10, 'J','Q','K' or 'A'."
+  else
+    second_value = second_card
+    puts second_value
+    break
+  end
+end
 
-# puts "Please enter your second card"
-# second_card = gets.chomp
 # puts "Please enter the dealer's card"
 # dealers_card = gets.chomp
