@@ -1,14 +1,38 @@
+
+first_value = 0
+second_value = 0
+dealer_value = 0
+
 def face_check(card)
-  card == "J" || card == "Q" || card == "K"
+ card == "J" || card == "Q" || card == "K"
 end
 
 def ace_check(card)
   card == "A"
 end
 
+def pairs(first_value, second_value)
+  first_value == second_value
+end
+
+pairs_hash = {
+2 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "H", 9 => "H", 10 => "H", 11 => "H"},
+3 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "S", 9 => "H", 10 => "H", 11 => "H"},
+4 => {2 => "H", 3 => "H", 4 => "S", 5 => "S", 6 => "S", 7 => "H", 8 => "H", 9 => "H", 10 => "H", 11 => "H"},
+5 => {2 => "Dh", 3 => "Dh", 4 => "Dh", 5 => "Dh", 6 => "Dh", 7 => "Dh", 8 => "Dh", 9 => "Dh", 10 => "H", 11 => "H"},
+6 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "H", 9 => "H", 10 => "H", 11 => "H"},
+7 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "S", 9 => "H", 10 => "St", 11 => "H"},
+8 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "S", 9 => "S", 10 => "S", 11 => "S"},
+9 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "St", 8 => "S", 9 => "S", 10 => "St", 11 => "St"},
+10 => {2 => "St", 3 => "St", 4 => "St", 5 => "St", 6 => "St", 7 => "St", 8 => "St", 9 => "St", 10 => "St", 11 => "St"},
+11 => {2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "S", 9 => "S", 10 => "S", 11 => "S"}
+}
+
+
 puts "Welcome to the Blackjack Advisor"
 puts "Before we get started, know that you can enter facecards as 'J', 'Q', 'K' or the value '10'. An ace, however, must be entered as 'A'."
 puts "Let's get started!"
+
 
 loop do
   puts "Please enter your first card:"
@@ -60,3 +84,12 @@ loop do
     break
   end
 end
+
+if pairs(first_value,second_value)
+  puts pairs_hash[first_value][second_value]
+  # Ahhhh  I don't understand why the variables don't work. They worked in irb with the pairs_hash.
+end
+
+
+
+{2 => "S", 3 => "S", 4 => "S", 5 => "S", 6 => "S", 7 => "S", 8 => "S", 9 => "S", 10 => "S", 11 => "S"}
