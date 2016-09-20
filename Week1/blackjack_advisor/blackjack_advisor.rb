@@ -159,4 +159,3 @@ else
 end
 
 puts "I would recommend that you #{advice}."
-# test. Need loop to restart?
